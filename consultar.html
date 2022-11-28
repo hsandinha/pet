@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+    
+</head>
+<script>
+
+  
+async function procPedidos() {
+    const res = await fetch("json/pedidos.json");
+    const pedidos = await res.json();
+
+    lista = "<table border=1><tr><th>Animal</th><th>Raça</th><th>Serviço</th><th>Data Serviço</th><th>Hora Serviço</th></tr>";
+      for (let i = 0; i < pedidos.length; i++) {
+        
+        lista += "<tr><td>"+ pedidos[i].animal + "</td><td>" +
+          pedidos[i].raca + "</td><td>" +
+            pedidos[i].servico + "</td><td>"+
+            pedidos[i].dataServico + "</td><td>"+
+            pedidos[i].horaServico + "</td></tr>";
+      }
+      lista += "</table>"
+
+   document.getElementById('saida_animais').innerHTML = lista;
+}
+
+
+ </script>
+  
+  <header>
+    
+    <div class="container-logo">
+    <div class="logo-imagem"><a href="home.html"><img src="img/logomarca.png" width="60"></a></div>  
+    <div class="logo-texto"></div> 
+    <h1>UNIPETSHOP</h1>&emsp;&emsp;&emsp;<h3>Bem vindo,<br><script>console.log(usuarioSistema)</script></h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  </div>
+
+  <div class="menu">
+    <br>
+    <ul>
+      <li><a href="pets.html">Meus Animais</a></li>
+      <li><a href="consultar.html">Meus Pedidos</a></li>
+      <li><a href="novo.html">Cadastrar</a></li>
+      <li><a href="solicitar.html">solicitar</a></li>
+      <li><a href="index.html">Sair</a></li>
+    </ul>
+    </div>
+ 
+   <div class="sociais">
+            <i class=""><img src="img/facebook.png"  width="30" height="30" alt=""></i>
+              <i class=""><img src="img/whatsap.png"  width="30" height="30" alt=""></i>
+              <i class=""><img src="img/instagram.png"  width="30" height="30" alt=""></i>
+    </div>
+  </header>
+  <body onload="procPedidos()">
+    <div class="main-login">
+
+      <div class="login">
+        <h1>HISTORICO DE PEDIDOS</h1><br><BR> 
+          <div id="saida_animais"></div><br><BR><BR>		
+      </div>
+    </div>
+  </body>
+</html>

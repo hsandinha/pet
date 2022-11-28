@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./js/verifica.js"></script>
+
+
+    <script type="text/javascript">
+      function usuarioLogado(){
+      const params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+      });
+      // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+      console.log('usuario recebido: ' + params.name);
+      document.getElementById("valor_usuario").innerHTML = params.name
+    }
+</script>
+    <title>Login</title>
+    
+</head>
+<body link="white" vlink="white" onload="usuarioLogado()">
+  
+  <header>
+    
+    <div class="container-logo">
+    <div class="logo-imagem"><a href="home.html"><img src="img/logomarca.png" width="60"></a></div>  
+    <div class="logo-texto"></div> 
+    <h1>UNIPETSHOP</h1>&emsp;&emsp;&emsp;<h3>Bem vindo,<br><span id="valor_usuario"></span></h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  </div>
+
+  <div class="menu">
+    <br>
+    <ul>
+      <li><a href="pets.html?name="+params.name>Meus Animais</a></li>
+      <li><a href="consultar.html">Meus Pedidos</a></li>
+      <li><a href="novo.html">Cadastrar</a></li>
+      <li><a href="solicitar.html">solicitar</a></li>
+      <li><a href="index.html">Sair</a></li>
+    </ul>
+    </div>
+ 
+   <div class="sociais">
+            <i class=""><img src="img/facebook.png"  width="30" height="30" alt=""></i>
+              <i class=""><img src="img/whatsap.png"  width="30" height="30" alt=""></i>
+              <i class=""><img src="img/instagram.png"  width="30" height="30" alt=""></i>
+    </div>
+  </header>
+  <body><div class="main-login"></div>
+  </body>
+</html>

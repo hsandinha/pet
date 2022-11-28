@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+    
+</head>
+<script type="text/javascript">
+
+  
+async function procAnimais() {
+    const res = await fetch("json/pets.json");
+    const pets = await res.json();
+
+    lista = "<table border=1><tr><th>Nome Animal</th><th>Raça</th><th>Aniversário</th></tr>";
+      for (let i = 0; i < pets.length; i++) {
+        if(params.name == pets[i].dono){
+        lista += "<tr><td>"+ pets[i].nomeanimal + "</td><td>" +
+          pets[i].raca + "</td><td>" +
+            pets[i].nascimento + "</td></tr>";
+          }
+      }
+      lista += "</table>"
+
+   document.getElementById('saida_animais').innerHTML = lista;
+}
+
+      function usuarioLogado(){
+      const params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+      });
+      // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+      console.log('usuario recebido: ' + params.name);
+      document.getElementById("valor_usuario").innerHTML = params.name
+      procAnimais()
+    }
+
+
+
+ </script>
+  
+  <header>
+    
+    <div class="container-logo">
+    <div class="logo-imagem"><a href="home.html"><img src="img/logomarca.png" width="60"></a></div>  
+    <div class="logo-texto"></div> 
+    <h1>UNIPETSHOP</h1>&emsp;&emsp;&emsp;<h3>Bem vindo,<br><script>console.log(usuarioSistema)</script></h3>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  </div>
+
+  <div class="menu">
+    <br>
+    <ul>
+      <li><a href="pets.html">Meus Animais</a></li>
+      <li><a href="consultar.html">Meus Pedidos</a></li>
+      <li><a href="novo.html">Cadastrar</a></li>
+      <li><a href="solicitar.html">solicitar</a></li>
+      <li><a href="index.html">Sair</a></li>
+    </ul>
+    </div>
+ 
+   <div class="sociais">
+            <i class=""><img src="img/facebook.png"  width="30" height="30" alt=""></i>
+              <i class=""><img src="img/whatsap.png"  width="30" height="30" alt=""></i>
+              <i class=""><img src="img/instagram.png"  width="30" height="30" alt=""></i>
+    </div>
+  </header>
+  <body onload="usuarioLogado()">
+    <div class="main-login">
+
+      <div class="login">
+        <h1>Meus Animais</h1><br><BR> 
+          <div id="saida_animais"></div><br><BR><BR>	
+      </div>
+    </div>
+  </body>
+</html>

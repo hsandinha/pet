@@ -1,0 +1,118 @@
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+.textfield >input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+.textfield > label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+
+}
+.textfield > input::placeholder{
+    color: #f0ffff94;
+
+
+}
+ 
+       .menu li{
+        display: inline-block;
+        margin: 0 1px;
+    }
+    
+    .menu li a{
+        font-size: 12px;
+        text-decoration: none;
+        justify-content: center;
+        color: rgb(51, 48, 47);
+        text-transform: uppercase;
+        padding: 10PX 5px;
+        border-radius: 12px;
+        
+
+    }
+    .menu li a:hover{
+        background-color: rgba(29, 26, 26, 0.5);
+    }
+    .mainmenubtn {
+        background-color: skyblue;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding:10px;
+        margin-top:10px;
+    }
+    .mainmenubtn:active {
+        background-color: blue;
+        }
+    .dropdown {
+        position: absolute;
+        display: inline-block;
+    }
+    .dropdown-child {
+        display: list-item;
+        background-color: rgb(233, 143, 24);
+        min-width: 10px;
+    }
+    .dropdown-child a {
+        color: blue;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown:hover .dropdown-child {
+        display: block;
+        visibility: visible;
+    }
+
+    .mainmenubtn {
+        background-color: rgb(32, 46, 243);
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding:10px;
+        margin-top:10px;
+    }
+    .mainmenubtn:active {
+        background-color: rgb(245, 240, 238);
+        }
+    .dropdown {
+        position: fixed;
+        display: block;
+    }
+    .dropdown-child {
+        display: none;
+        background-color: rgba(72, 78, 74, 0.5);
+       
+        
+    }
+    .dropdown-child a {
+        color: rgb(255, 0, 221);
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+        text-transform: uppercase;
+        font-size: 24px;
+        text-decoration: none;
+        color: rgb(248, 91, 0);
+        padding: 10PX 5px;
+        border-radius: 15px;
+
+    }
+    .dropdown:hover .dropdown-child {
+        background-color: rgba(248, 239, 223, 0.7);
+    }
